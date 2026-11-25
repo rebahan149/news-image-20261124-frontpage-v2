@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>The Whole Wide Tuesday — Tuesday 24 November 2026</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html,body { width:1024px; height:1024px; overflow:hidden; }
+  body {
+    background:#f6f1e5; color:#1b1712;
+    font-family:"Helvetica Neue", Arial, "DejaVu Sans", sans-serif;
+    padding:13px 24px 10px 24px;
+  }
+  .serif { font-family:Georgia, "Times New Roman", "DejaVu Serif", serif; }
+
+  /* hairline */
+  .hairline {
+    display:flex; justify-content:space-between; align-items:baseline;
+    border-top:3px solid #1b1712; border-bottom:1px solid #1b1712;
+    padding:4px 1px 3px 1px; font-size:10.5px; letter-spacing:.14em; font-weight:700;
+  }
+  .hairline .c { color:#a02318; }
+
+  /* masthead */
+  .masthead { text-align:center; padding:5px 0 1px 0; }
+  .masthead h1 {
+    font-family:Georgia, "Times New Roman", "DejaVu Serif", serif;
+    font-size:51px; font-weight:700; letter-spacing:.005em; line-height:1.02;
+  }
+  .dateline {
+    text-align:center; font-size:12.5px; letter-spacing:.3em; font-weight:700;
+    padding:2px 0 4px 0;
+  }
+  .counts {
+    text-align:center; font-size:11px; letter-spacing:.06em; font-weight:700;
+    border-top:1.5px solid #1b1712; border-bottom:1.5px solid #1b1712;
+    padding:3px 0 3px 0;
+  }
+  .counts .dot { color:#a02318; }
+
+  /* red top-3 strip */
+  .topstrip {
+    text-align:center; padding:5px 4px 5px 4px;
+    border-bottom:1px solid #1b1712;
+    font-family:Georgia, "Times New Roman", "DejaVu Serif", serif;
+    font-style:italic; font-size:16px;
+  }
+  .topstrip .dia { color:#b02a1e; font-style:normal; padding:0 7px; }
+
+  /* stat strip */
+  .stats { display:flex; border-bottom:2px solid #1b1712; }
+  .stat { flex:1; display:flex; align-items:center; gap:7px; padding:5px 8px 5px 8px; }
+  .stat + .stat { border-left:1px solid #b9b09a; }
+  .stat .n {
+    font-family:Georgia, "Times New Roman", "DejaVu Serif", serif;
+    font-size:30px; font-weight:700; line-height:1; white-space:nowrap;
+  }
+  .stat .cap { font-size:8.4px; line-height:1.22; color:#3d382e; }
+
+  /* heroes */
+  .heroes { display:flex; gap:14px; padding:8px 0 0 0; }
+  .hero { flex:1; }
+  .hero .art { border:1.5px solid #1b1712; height:98px; overflow:hidden; }
+  .hero .art svg { display:block; width:100%; height:100%; }
+  .tagrow { display:flex; align-items:center; gap:6px; padding:5px 0 2px 0; }
+  .tag {
+    color:#fff; font-size:9px; font-weight:700; letter-spacing:.08em;
+    padding:2.5px 6px 2.5px 6px; white-space:nowrap;
+  }
+  .num {
+    background:#1b1712; color:#f6f1e5; border-radius:50%;
+    width:17px; height:17px; font-size:10.5px; font-weight:700;
+    display:inline-flex; align-items:center; justify-content:center; flex:none;
+  }
+  .num.light { background:#f6f1e5; color:#1b1712; border:1.4px solid #1b1712; width:15px; height:15px; font-size:9.5px; }
+  .dateloc { font-size:9.5px; font-weight:700; letter-spacing:.1em; color:#3d382e; }
+  .hero h2 {
+    font-family:Georgia, "Times New Roman", "DejaVu Serif", serif;
+    font-size:22px; line-height:1.07; font-weight:700; padding:1px 0 4px 0;
+  }
+  .hero p { font-size:11.8px; line-height:1.3; color:#26221b; }
+  .src { font-size:8.4px; letter-spacing:.12em; color:#7a7261; padding-top:4px; font-weight:700; }
+
+  .eu { background:#1f4e79; } .me { background:#a85b12; } .as { background:#9e2a1e; }
+  .af { background:#2e7d4f; } .am { background:#5b3a9e; } .oc { background:#0e7c86; }
+  .gl { background:#55534a; }
+
+  /* grid 4-11 */
+  .grid {
+    display:grid; grid-template-columns:repeat(4, 1fr); gap:0 14px;
+    padding:8px 0 0 0;
+  }
+  .cell { border-top:3.5px solid #1b1712; padding:5px 0 6px 0; }
+  .cell .tagrow { padding:0 0 2px 0; }
+  .cell .tag { font-size:8.4px; padding:2px 5px; }
+  .cell h3 {
+    font-family:Georgia, "Times New Roman", "DejaVu Serif", serif;
+    font-size:16px; line-height:1.1; font-weight:700; padding:1px 0 3px 0;
+  }
+  .cell .body { display:flex; gap:7px; }
+  .cell .big {
+    font-family:Georgia, "Times New Roman", "DejaVu Serif", serif;
+    font-size:19px; font-weight:700; line-height:1.05; text-align:center;
+    min-width:52px; padding-top:1px;
+  }
+  .cell .big small { display:block; font-family:"Helvetica Neue", Arial, sans-serif; font-size:7.6px; font-weight:700; letter-spacing:.06em; color:#3d382e; padding-top:2px; }
+  .cell p { font-size:10.3px; line-height:1.27; color:#26221b; }
+
+  /* bottom: map + also */
+  .bottom { display:flex; gap:14px; padding:8px 0 0 0; }
+  .mapbox { width:338px; flex:none; }
+  .panelhead {
+    background:#1b1712; color:#f6f1e5; font-size:10px; font-weight:700;
+    letter-spacing:.1em; padding:4px 8px; display:flex; justify-content:space-between;
+  }
+  .panelhead .thin { font-weight:400; letter-spacing:.02em; color:#cfc7b2; }
+  .mapwrap { border:1.5px solid #1b1712; border-top:none; height:192px; }
+  .mapwrap svg { display:block; width:100%; height:100%; }
+  .alsobox { flex:1; }
+  .also {
+    border:1.5px solid #1b1712; border-top:none; height:192px;
+    display:grid; grid-template-columns:1fr 1fr; column-gap:16px;
+    padding:5px 9px 3px 9px; align-content:start;
+  }
+  .also .it { font-size:10.3px; line-height:1.16; padding:.8px 0; display:flex; gap:5px; align-items:flex-start; }
+  .also .it b { font-weight:700; }
+  .also .it .num { width:13px; height:13px; font-size:8px; margin-top:0; }
+
+  /* footer */
+  .footer { padding:7px 0 0 0; }
+  .datecheck {
+    border:1.5px solid #1b1712; padding:4px 9px 4px 9px; font-size:10px; line-height:1.32;
+  }
+  .datecheck .lbl { color:#b02a1e; font-weight:700; letter-spacing:.08em; }
+  .datecheck b { font-weight:700; }
+  .closing { text-align:center; font-size:9.8px; color:#3d382e; padding-top:4px; }
+</style>
+</head>
+<body>
+
+<div class="hairline">
+  <div>A ONE-PAGE WORLD BRIEFING</div>
+  <div class="c">DAY 328 OF 2026</div>
+  <div>EVERY STORY DATED TUESDAY 24 NOV</div>
+</div>
+
+<div class="masthead"><h1>The Whole Wide Tuesday</h1></div>
+<div class="dateline">TUESDAY&nbsp; 24&nbsp; NOVEMBER&nbsp; 2026</div>
+
+<div class="counts">35 STORIES, ALL FROM TUESDAY 24 NOV <span class="dot">·</span> EUROPE 9 <span class="dot">·</span> MIDDLE EAST 4 <span class="dot">·</span> ASIA 9 <span class="dot">·</span> AFRICA 3 <span class="dot">·</span> AMERICAS 4 <span class="dot">·</span> OCEANIA 4 <span class="dot">·</span> GLOBAL 2</div>
+
+<div class="topstrip">Russia says it downed 699 drones<span class="dia">◆</span>Baghdad takes over Kurdish-held oilfields<span class="dia">◆</span>Malaysia to return 6,500 Rohingya</div>
+
+<div class="stats">
+  <div class="stat"><div class="n">699</div><div class="cap">Ukrainian drones Russia says it downed overnight</div></div>
+  <div class="stat"><div class="n">4</div><div class="cap">Iraqi provinces whose oilfields Baghdad took over</div></div>
+  <div class="stat"><div class="n">6,500+</div><div class="cap">Rohingya Malaysia will return to Myanmar</div></div>
+  <div class="stat"><div class="n">350k</div><div class="cap">EU yearly cap on Chinese hybrid cars</div></div>
+  <div class="stat"><div class="n">47,000</div><div class="cap">women &amp; girls killed by kin in 2025 (UN)</div></div>
+  <div class="stat"><div class="n">85</div><div class="cap">Donald runs off 32 balls on the Gold Coast</div></div>
+</div>
+
+<div class="heroes">
+
+  <div class="hero">
+    <div class="art">
+      <svg viewBox="0 0 312 118" preserveAspectRatio="none">
+        <rect width="312" height="118" fill="#e9eff5"/>
+        <polygon points="0,18 34,10 40,52 30,96 0,104" fill="#cfd6cf"/>
+        <polygon points="40,30 108,16 168,26 176,58 150,88 96,100 44,88 34,54" fill="#e6d18c" stroke="#8a7a3a" stroke-width="1"/>
+        <polygon points="168,26 312,6 312,118 190,118 150,88 176,58" fill="#dde3e8"/>
+        <path d="M118,62 Q180,26 240,34" fill="none" stroke="#55534a" stroke-width="1.2" stroke-dasharray="4 3"/>
+        <path d="M126,70 Q186,44 238,40" fill="none" stroke="#55534a" stroke-width="1.2" stroke-dasharray="4 3"/>
+        <g fill="#1b1712">
+          <path d="M150,44 l5,5 -5,5 -5,-5 Z"/><path d="M168,34 l5,5 -5,5 -5,-5 Z"/>
+          <path d="M186,48 l5,5 -5,5 -5,-5 Z"/><path d="M204,32 l5,5 -5,5 -5,-5 Z"/>
+          <path d="M158,58 l4,4 -4,4 -4,-4 Z"/><path d="M196,58 l4,4 -4,4 -4,-4 Z"/>
+        </g>
+        <circle cx="243" cy="36" r="8" fill="none" stroke="#b02a1e" stroke-width="2"/>
+        <circle cx="243" cy="36" r="2.6" fill="#b02a1e"/>
+        <circle cx="118" cy="64" r="3" fill="#1b1712"/>
+        <circle cx="128" cy="94" r="3" fill="#b02a1e"/>
+        <text x="248" y="26" font-size="9" font-weight="700" fill="#1b1712">Moscow</text>
+        <text x="96" y="56" font-size="9.5" font-weight="700" fill="#5c4d14">UKRAINE</text>
+        <text x="252" y="106" font-size="10" font-weight="700" fill="#6b7683">RUSSIA</text>
+        <text x="3" y="62" font-size="7.5" font-weight="700" fill="#4c554c" transform="rotate(-90 8 62)"></text>
+        <text x="4" y="30" font-size="8" font-weight="700" fill="#4c554c">POLAND</text>
+        <text x="104" y="108" font-size="8" fill="#b02a1e" font-weight="700">Zaporizhzhia: 2 killed</text>
+        <g transform="translate(8,96)">
+          <path d="M0,6 L14,6 L20,1 L22,6 L30,6 L30,9 L0,9 Z" fill="#1b1712"/>
+          <text x="34" y="10" font-size="8" font-weight="700" fill="#1b1712">NATO AWACS</text>
+        </g>
+        <g transform="translate(196,80)">
+          <rect width="106" height="30" fill="#f6f1e5" stroke="#1b1712" stroke-width="1.4"/>
+          <text x="53" y="15" font-size="13" font-weight="700" text-anchor="middle" fill="#1b1712">699</text>
+          <text x="53" y="25" font-size="6.8" text-anchor="middle" fill="#3d382e">DRONES DOWNED*</text>
+        </g>
+      </svg>
+    </div>
+    <div class="tagrow"><span class="tag eu">EUROPE · WAR</span><span class="num">1</span><span class="dateloc">MOSCOW / KYIV / WARSAW</span></div>
+    <h2>Drone war: 699 downed, Poland on alert</h2>
+    <p>Russia says it shot down 699 Ukrainian drones overnight, 355 bound for the Moscow region; a strike on Zaporizhzhia kills 2. A Russian drone briefly enters Polish airspace as NATO sends an AWACS to Poland.</p>
+    <div class="src">AFP · REUTERS</div>
+  </div>
+
+  <div class="hero">
+    <div class="art">
+      <svg viewBox="0 0 312 118" preserveAspectRatio="none">
+        <rect width="312" height="118" fill="#f3ecd9"/>
+        <polygon points="96,8 168,2 196,26 188,58 204,84 176,110 118,108 92,76 78,40" fill="#eee0b8" stroke="#8a7a3a" stroke-width="1"/>
+        <polygon points="100,12 132,8 134,30 104,34" fill="#d9a441" stroke="#8a6a1f" stroke-width=".8"/>
+        <polygon points="134,8 164,6 182,24 158,32 134,30" fill="#d9a441" stroke="#8a6a1f" stroke-width=".8"/>
+        <polygon points="130,34 158,32 162,56 132,58" fill="#d9a441" stroke="#8a6a1f" stroke-width=".8"/>
+        <polygon points="158,32 186,28 184,54 162,56" fill="#d9a441" stroke="#8a6a1f" stroke-width=".8"/>
+        <text x="104" y="25" font-size="7.6" font-weight="700" fill="#4c3a08">Nineveh</text>
+        <text x="146" y="22" font-size="7.6" font-weight="700" fill="#4c3a08">Kirkuk</text>
+        <text x="126" y="48" font-size="6.7" font-weight="700" fill="#4c3a08">Salahuddin</text>
+        <text x="166" y="45" font-size="7.4" font-weight="700" fill="#4c3a08">Diyala</text>
+        <circle cx="188" cy="16" r="2.4" fill="#1b1712"/>
+        <text x="193" y="14" font-size="7.6" fill="#1b1712">Erbil</text>
+        <path d="M140,96 l2.2,4.4 4.8,.4 -3.6,3.2 1.1,4.7 -4.5,-2.6 -4.5,2.6 1.1,-4.7 -3.6,-3.2 4.8,-.4 Z" fill="#b02a1e"/>
+        <text x="118" y="114" font-size="8" font-weight="700" fill="#1b1712">BAGHDAD</text>
+        <path d="M146,92 Q176,66 168,38" fill="none" stroke="#b02a1e" stroke-width="2"/>
+        <path d="M168,38 l-6,2 4,6 Z" fill="#b02a1e"/>
+        <text x="212" y="18" font-size="11" font-weight="700" fill="#b02a1e">4 PROVINCES</text>
+        <g stroke="#1b1712" stroke-width="2" fill="none">
+          <path d="M222,96 L238,52 L254,96 Z"/><path d="M228,78 L248,78 M231,66 L245,66"/>
+          <path d="M258,96 L270,62 L282,96 Z"/><path d="M262,82 L278,82"/>
+          <path d="M196,96 L206,70 L216,96 Z"/>
+        </g>
+        <g transform="translate(206,100)"><rect width="100" height="14" fill="#1b1712"/><text x="50" y="10.5" font-size="8" font-weight="700" fill="#f6f1e5" text-anchor="middle">FIELDS + EXPORTS</text></g>
+      </svg>
+    </div>
+    <div class="tagrow"><span class="tag me">MIDDLE EAST · OIL</span><span class="num">2</span><span class="dateloc">KIRKUK, IRAQ</span></div>
+    <h2>Baghdad seizes Kurdish-held oilfields</h2>
+    <p>PM Ali al-Zaidi puts the fields in Kirkuk, Diyala, Salahuddin and Nineveh under the federal oil ministry, and takes over the Kurdish region's border crossings and oil exports.</p>
+    <div class="src">REUTERS, BAGHDAD</div>
+  </div>
+
+  <div class="hero">
+    <div class="art">
+      <svg viewBox="0 0 312 118" preserveAspectRatio="none">
+        <rect width="312" height="118" fill="#dfeaf2"/>
+        <polygon points="18,6 84,2 104,26 88,52 52,58 26,40" fill="#e6d18c" stroke="#8a7a3a" stroke-width="1"/>
+        <polygon points="150,34 168,30 176,58 186,88 200,112 188,114 168,84 156,56" fill="#e6d18c" stroke="#8a7a3a" stroke-width="1"/>
+        <text x="30" y="24" font-size="8.5" font-weight="700" fill="#5c4d14">MYANMAR</text>
+        <text x="196" y="104" font-size="8.5" font-weight="700" fill="#5c4d14">MALAYSIA</text>
+        <path d="M120,20 Q170,8 208,26" fill="none" stroke="#55534a" stroke-width="1.2" stroke-dasharray="4 3"/>
+        <g transform="translate(196,12)" fill="#1b1712">
+          <path d="M0,8 L10,8 L22,2 L24,8 L34,8 L34,11 L24,11 L20,16 L16,16 L18,11 L8,11 L4,15 L1,15 L3,10 Z"/>
+        </g>
+        <text x="212" y="40" font-size="8" fill="#3d382e">5,303 by air</text>
+        <path d="M96,66 Q130,84 168,78" fill="none" stroke="#55534a" stroke-width="1.2" stroke-dasharray="4 3"/>
+        <g transform="translate(104,58)" fill="#1b1712">
+          <path d="M14,0 L26,0 L26,6 L14,6 Z M18,6 L18,10 L30,10 L36,18 L6,18 L10,10 L14,10 Z"/>
+        </g>
+        <text x="52" y="86" font-size="8" fill="#3d382e">1,500 by navy ship</text>
+        <g transform="translate(196,52)">
+          <rect width="108" height="32" fill="#f6f1e5" stroke="#1b1712" stroke-width="1.4"/>
+          <text x="54" y="16" font-size="13.5" font-weight="700" text-anchor="middle" fill="#1b1712">6,500+</text>
+          <text x="54" y="27" font-size="6.8" text-anchor="middle" fill="#3d382e">TO BE RETURNED</text>
+        </g>
+      </svg>
+    </div>
+    <div class="tagrow"><span class="tag as">ASIA · REFUGEES</span><span class="num">3</span><span class="dateloc">KUALA LUMPUR, MALAYSIA</span></div>
+    <h2>Malaysia to send 6,500 Rohingya back</h2>
+    <p>Anwar tells parliament over 6,500 Myanmar nationals will be returned in December — 1,500 by navy ship on 6–7 Dec, 5,303 by air — days after the ICJ ruled Myanmar committed genocide against the Rohingya.</p>
+    <div class="src">AFP VIA AL JAZEERA</div>
+  </div>
+
+</div>
+
+<div class="grid">
+
+  <div class="cell" style="border-top-color:#a85b12">
+    <div class="tagrow"><span class="num light">4</span><span class="tag me">HORMUZ · SHIPPING</span></div>
+    <h3>Iran: tankers hit its mines</h3>
+    <div class="body"><div class="big">2–3<small>TANKERS</small></div><p>IRGC says 2–3 tankers caught fire after breaking its strait rules; claim unverified, CENTCOM silent.</p></div>
+  </div>
+
+  <div class="cell" style="border-top-color:#a85b12">
+    <div class="tagrow"><span class="num light">5</span><span class="tag me">GAZA · WAR</span></div>
+    <h3>Strikes kill 7; meningitis warning</h3>
+    <div class="body"><div class="big">7<small>KILLED</small></div><p>Israeli strikes hit Khan Younis and near Netzarim as doctors warn of an outbreak: 272 cases in Oct.</p></div>
+  </div>
+
+  <div class="cell" style="border-top-color:#1f4e79">
+    <div class="tagrow"><span class="num light">6</span><span class="tag eu">BRUSSELS · TRADE</span></div>
+    <h3>EU caps Chinese hybrid cars</h3>
+    <div class="body"><div class="big">350k<small>A YEAR</small></div><p>Import quotas adopted: 350,000 a year for China, from 1 Dec, for up to 200 days.</p></div>
+  </div>
+
+  <div class="cell" style="border-top-color:#9e2a1e">
+    <div class="tagrow"><span class="num light">7</span><span class="tag as">SEOUL / TOKYO · MARKETS</span></div>
+    <h3>Chip stocks lift Asia</h3>
+    <div class="body"><div class="big">+7%<small>KOSPI</small></div><p>Kospi up about 7%, Nikkei about 4% after Nvidia's rally; Hang Seng barely moves.</p></div>
+  </div>
+
+  <div class="cell" style="border-top-color:#9e2a1e">
+    <div class="tagrow"><span class="num light">8</span><span class="tag as">HANOI · DISASTER</span></div>
+    <h3>Restaurant gas blast kills six</h3>
+    <div class="body"><div class="big">6<small>DEAD</small></div><p>Suspected gas explosion at a hot pot eatery in Dong Da district at about 08:00; 10 injured.</p></div>
+  </div>
+
+  <div class="cell" style="border-top-color:#9e2a1e">
+    <div class="tagrow"><span class="num light">9</span><span class="tag as">DHAKA · POLITICS</span></div>
+    <h3>Hasina says she will fly home 16 Dec</h3>
+    <div class="body"><div class="big">16<small>DEC</small></div><p>Sentenced to death in absentia, she asks to be flown home; Dhaka says only by extradition.</p></div>
+  </div>
+
+  <div class="cell" style="border-top-color:#0e7c86">
+    <div class="tagrow"><span class="num light">10</span><span class="tag oc">CANBERRA · SECURITY</span></div>
+    <h3>Solomons swaps China pact for Australia</h3>
+    <div class="body"><div class="big">2022<small>PACT ENDS</small></div><p>PM Wale arrives to sign a treaty in Canberra; Honiara ends its 2022 China security deal.</p></div>
+  </div>
+
+  <div class="cell" style="border-top-color:#5b3a9e">
+    <div class="tagrow"><span class="num light">11</span><span class="tag am">CARACAS · ECONOMY</span></div>
+    <h3>Venezuela lays its debt bare</h3>
+    <div class="body"><div class="big">$237.5<small>BILLION</small></div><p>First full framework in years puts debts at $237.5bn, ahead of a huge restructuring.</p></div>
+  </div>
+
+</div>
+
+<div class="bottom">
+
+  <div class="mapbox">
+    <div class="panelhead"><span>WHERE IT HAPPENED</span><span class="thin">pins carry the story numbers</span></div>
+    <div class="mapwrap">
+      <svg viewBox="0 0 336 196">
+        <rect width="336" height="196" fill="#dfeaf2"/>
+        <g stroke="#c3d5e2" stroke-width="1">
+          <path d="M0,49 H336 M0,98 H336 M0,147 H336 M56,0 V196 M112,0 V196 M168,0 V196 M224,0 V196 M280,0 V196"/>
+        </g>
+        <g fill="#e8dfc4" stroke="#b3a67f" stroke-width="1">
+          <polygon points="16,40 34,24 66,18 96,26 104,44 96,58 102,72 90,76 92,88 78,86 66,92 52,80 38,70 24,62"/>
+          <polygon points="64,98 82,92 98,102 94,128 84,156 74,150 66,124 58,108"/>
+          <polygon points="146,32 164,22 180,30 178,44 168,54 154,52 144,44"/>
+          <polygon points="144,66 168,60 188,68 192,86 184,114 170,132 156,116 146,88"/>
+          <polygon points="180,26 236,16 292,18 310,34 306,54 284,62 268,78 254,92 246,72 232,62 214,58 196,50 182,40"/>
+          <polygon points="222,60 240,58 248,74 240,92 226,86 218,72"/>
+          <polygon points="272,112 300,106 310,120 300,138 278,136 268,124"/>
+          <polygon points="246,100 262,98 276,102 262,108 246,106"/>
+        </g>
+        <g font-family="Helvetica Neue, Arial, sans-serif" font-weight="700" text-anchor="middle">
+          <g><circle cx="186" cy="43" r="7" fill="#1f4e79"/><text x="186" y="46" font-size="8" fill="#fff">1</text></g>
+          <g><circle cx="202" cy="67" r="7" fill="#a85b12"/><text x="202" y="70" font-size="8" fill="#fff">2</text></g>
+          <g><circle cx="252" cy="109" r="7" fill="#9e2a1e"/><text x="252" y="112" font-size="8" fill="#fff">3</text></g>
+          <g><circle cx="213" cy="79" r="7" fill="#a85b12"/><text x="213" y="82" font-size="8" fill="#fff">4</text></g>
+          <g><circle cx="188" cy="74" r="7" fill="#a85b12"/><text x="188" y="77" font-size="8" fill="#fff">5</text></g>
+          <g><circle cx="160" cy="41" r="7" fill="#1f4e79"/><text x="160" y="44" font-size="8" fill="#fff">6</text></g>
+          <g><circle cx="277" cy="63" r="7" fill="#9e2a1e"/><text x="277" y="66" font-size="8" fill="#fff">7</text></g>
+          <g><circle cx="258" cy="85" r="7" fill="#9e2a1e"/><text x="258" y="88" font-size="8" fill="#fff">8</text></g>
+          <g><circle cx="243" cy="80" r="7" fill="#9e2a1e"/><text x="243" y="83" font-size="8" fill="#fff">9</text></g>
+          <g><circle cx="308" cy="127" r="7.5" fill="#0e7c86"/><text x="308" y="130" font-size="6.8" fill="#fff">10</text></g>
+          <g><circle cx="96" cy="101" r="7.5" fill="#5b3a9e"/><text x="96" y="104" font-size="6.8" fill="#fff">11</text></g>
+          <g><circle cx="195" cy="50" r="7.5" fill="#1f4e79"/><text x="195" y="53" font-size="6.8" fill="#fff">12</text></g>
+          <g><circle cx="170" cy="57" r="7.5" fill="#55534a"/><text x="170" y="60" font-size="6.8" fill="#fff">16</text></g>
+          <g><circle cx="93" cy="52" r="7.5" fill="#55534a"/><text x="93" y="55" font-size="6.8" fill="#fff">17</text></g>
+          <g><circle cx="262" cy="118" r="7.5" fill="#9e2a1e"/><text x="262" y="121" font-size="6.8" fill="#fff">21</text></g>
+          <g><circle cx="250" cy="58" r="7.5" fill="#9e2a1e"/><text x="250" y="61" font-size="6.8" fill="#fff">23</text></g>
+          <g><circle cx="259" cy="125" r="7.5" fill="#9e2a1e"/><text x="259" y="128" font-size="6.8" fill="#fff">24</text></g>
+          <g><circle cx="85" cy="79" r="7.5" fill="#5b3a9e"/><text x="85" y="82" font-size="6.8" fill="#fff">25</text></g>
+          <g><circle cx="169" cy="99" r="7.5" fill="#2e7d4f"/><text x="169" y="102" font-size="6.8" fill="#fff">29</text></g>
+          <g><circle cx="158" cy="50" r="7.5" fill="#2e7d4f"/><text x="158" y="53" font-size="6.8" fill="#fff">31</text></g>
+          <g><circle cx="300" cy="152" r="7.5" fill="#0e7c86"/><text x="300" y="155" font-size="6.8" fill="#fff">32</text></g>
+        </g>
+      </svg>
+    </div>
+  </div>
+
+  <div class="alsobox">
+    <div class="panelhead"><span>ALSO ON TUESDAY 24 NOV</span><span class="thin">the rest of the day, in brief</span></div>
+    <div class="also" style="grid-template-rows:repeat(12, 1fr); grid-auto-flow:column;">
+      <div class="it"><span class="num">12</span><span><b>Zaporizhzhia</b> Strike kills 2, wounds more than 40</span></div>
+      <div class="it"><span class="num">13</span><span><b>Budapest</b> PM Magyar to meet Zelenskiy in Ukraine</span></div>
+      <div class="it"><span class="num">14</span><span><b>Paris</b> France to build rare-earth stockpiles</span></div>
+      <div class="it"><span class="num">15</span><span><b>Nanterre</b> Officer who shot Nahel faces murder trial</span></div>
+      <div class="it"><span class="num">16</span><span><b>Rome</b> Late pope's diary tells of devil claims</span></div>
+      <div class="it"><span class="num">17</span><span><b>UN report</b> Five women an hour killed by kin</span></div>
+      <div class="it"><span class="num">18</span><span><b>Beijing</b> Pause on US minerals ban extended to 2027</span></div>
+      <div class="it"><span class="num">19</span><span><b>Canberra</b> Wong: US–China rivalry rewrites rules</span></div>
+      <div class="it"><span class="num">20</span><span><b>Canberra</b> Tech giants warned of 5% revenue fines</span></div>
+      <div class="it"><span class="num">21</span><span><b>Singapore</b> Q3 GDP +6.1%; 2026 outlook raised</span></div>
+      <div class="it"><span class="num">22</span><span><b>Singapore</b> PM: Megaspeed chip probe goes on</span></div>
+      <div class="it"><span class="num">23</span><span><b>Jiuquan</b> Pakistani to fly as 1st foreign astronaut</span></div>
+      <div class="it"><span class="num">24</span><span><b>Jakarta</b> Police treason case: two more named</span></div>
+      <div class="it"><span class="num">25</span><span><b>Havana</b> WHO chief visits, pledges $2m for vaccines</span></div>
+      <div class="it"><span class="num">26</span><span><b>Washington</b> Best Buy sales +6.1%, best in 5 years</span></div>
+      <div class="it"><span class="num">27</span><span><b>New York</b> Storms threaten Thanksgiving travel</span></div>
+      <div class="it"><span class="num">28</span><span><b>London</b> UK sanctions Houthis, four officials</span></div>
+      <div class="it"><span class="num">29</span><span><b>Borno</b> School enrolment nearly doubles</span></div>
+      <div class="it"><span class="num">30</span><span><b>South Africa</b> Cities tighten water curbs</span></div>
+      <div class="it"><span class="num">31</span><span><b>Lausanne</b> CAS restores Senegal's AFCON title</span></div>
+      <div class="it"><span class="num">32</span><span><b>Gold Coast</b> England beat Australia, level T20s</span></div>
+      <div class="it"><span class="num">33</span><span><b>Gaza City</b> Strike kills Hamas security chief</span></div>
+      <div class="it"><span class="num">34</span><span><b>London</b> Prince William's first Downing St visit</span></div>
+      <div class="it"><span class="num">35</span><span><b>London</b> Crystal Palace docked league points</span></div>
+    </div>
+  </div>
+
+</div>
+
+<div class="footer">
+  <div class="datecheck"><span class="lbl">DATE CHECK</span>&nbsp; Left out as other days' news. <b>Mon 23 Nov:</b> Nvidia rehires Huang and Wall Street's rally · Moscow's "open war" warning to Estonia · Yemen bus strike in Lahj · Guterres's AI call in Barbados · Denmark's "ghetto law" ruling. <b>Sat 21 Nov:</b> Banten factory fire. <b>Fri 20 Nov:</b> Kh-101 missiles in Poland.</div>
+  <div class="closing">Every story here happened or was first reported on <b>Tuesday 24 November 2026</b>, as the named outlets reported it. Maps and drawings are original vector art.</div>
+</div>
+
+</body>
+</html>
